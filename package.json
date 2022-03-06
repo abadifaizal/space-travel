@@ -1,0 +1,20 @@
+{
+	"name": "top-page",
+	"version": "1.0.0",
+	"description": "post css template",
+	"main": "index.js",
+	"scripts": {
+		"watchcss": "postcss top-page-assets/Css/style.css -o top-page-assets/Css/style-comp.css --watch"
+	},
+	"author": "Faizal",
+	"license": "ISC",
+	"devDependencies": {
+		"autoprefixer": "^10.4.2",
+		"cssnano": "^5.0.17",
+		"postcss": "^8.4.6",
+		"postcss-calc": "^8.2.4",
+		"postcss-cli": "^9.1.0",
+		"postcss-combine-media-query": "^1.0.1",
+		"postcss-import": "^14.0.2"
+	}
+}
