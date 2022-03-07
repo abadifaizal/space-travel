@@ -120,7 +120,7 @@ select {
 /* THIS IS MAGIC! */
 .flow > * + * {
     margin-top: var(--flow-space, 1rem);
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 .container {
@@ -190,4 +190,17 @@ select {
     margin-right: .5em;
     font-weight: 700;
     color: hsl(var(--clr-light) / 0.25);
+}
+
+/* --------------- */
+/* Components */
+/* --------------- */
+
+.large-button {
+    display: grid;
+    place-items: center;
+    padding: 0 2em;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    text-decoration: none;
 }
