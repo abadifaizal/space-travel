@@ -162,6 +162,7 @@ select {
     border: 5px solid limegreen;
     display: grid;
     place-items: center;
+    padding-inline: 2rem;
 }
 
 .grid-container * {
