@@ -113,15 +113,6 @@ select {
     margin-inline: auto;
     max-width: 80rem;
 }
-.grid-container {
-    text-align: center;
-    display: grid;
-    place-items: center;
-    padding-inline: 2rem;
-}
-.grid-container * {
-    max-width: 50ch;
-}
 .sr-only {
     position: absolute;
     width: 1px;
@@ -322,6 +313,50 @@ body{
 .home{
     background-image: url(../../assets/home/background-home-mobile.jpg);
 }
+/* --------------- */
+/* Layout */
+/* --------------- */
+.grid-container {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    padding-inline: 1rem;
+    padding-bottom: 4rem;
+}
+.grid-container * {
+    max-width: 50ch;
+}
+.numbered-title {
+    grid-area: title;
+}
+/* Destination layout */
+.grid-container--destination {
+    --flow-space: 2rem;
+    grid-template-areas: 
+        'title'
+        'image'
+        'tabs'
+        'content'
+    ;
+}
+.grid-container--destination > img {
+    grid-area: image;
+    max-width: 60%;
+}
+.grid-container--destination > .tab-list {
+    grid-area: tabs;
+}
+.grid-container--destination > .destination-info {
+    grid-area: content;
+}
+.destination-meta {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    border-top: 1px solid hsl( var(--clr-white) / .1);
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+}
 @media (min-width: 35em){
     /* Tablet */
     :root {
@@ -349,27 +384,6 @@ body{
         --fs-500: 1.75rem;
         --fs-400: 1.125rem;
     }
-    .grid-container {
-        text-align: left;
-        -webkit-column-gap: var(--container-gap, 2rem);
-           -moz-column-gap: var(--container-gap, 2rem);
-                column-gap: var(--container-gap, 2rem);
-        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
-    }
-
-    .grid-container > *:first-child {
-        grid-column: 2;
-    }
-    
-    .grid-container > *:last-child{
-        grid-column: 3;
-    }
-
-    .grid-container--home {
-        padding-bottom: max(6rem, 20vh);
-        -webkit-box-align: end;
-                align-items: end;
-    }
 
     .primary-header::after {
         content: "";
@@ -393,6 +407,27 @@ body{
     }
     .home {
         background-image: url(../../assets/home/background-home-desktop.jpg);
+    }
+    .grid-container {
+        text-align: left;
+        -webkit-column-gap: var(--container-gap, 2rem);
+           -moz-column-gap: var(--container-gap, 2rem);
+                column-gap: var(--container-gap, 2rem);
+        grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+    }
+
+    .grid-container > *:first-child {
+        grid-column: 2;
+    }
+    
+    .grid-container > *:last-child{
+        grid-column: 3;
+    }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        -webkit-box-align: end;
+                align-items: end;
     }
 }
 @media (prefers-reduced-motions: reduce){
